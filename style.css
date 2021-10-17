@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.yetenekler{
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+}
+yetenek{
+    margin: 75px 0;
+}
+.yetenek__ismi{
+    font-family: 'Segoe UI';
+    font-size: 20px;
+    font-weight: bolder;
+    color: #1c1d1c;
+    margin: 20px 0;
+}
+.yetenek__bar,
+.yetenek__yüzdesi{
+    height: 15px;
+    border-radius: 8px;
+}
+.yetenek__bar{
+    background-color: #d5d5d5;
+}
+.yetenek__yüzdesi{
+    font-family: 'Segoe UI';
+    background-color: #f3210d;
+    position: relative;
+    animation: fill 3s ease;
+}
+.yetenek__yüzdesi::before{
+    content: attr(yüzde);
+    position: absolute;
+    padding: 5px 8px;
+    background-color: #1c1d1c;
+    color: #fafaf9;
+    border-radius: 5px;
+    font-size: 14px;
+    top: -40px;
+    right: 0;
+    transform: translateX(50%);
+}
+.yetenek__yüzdesi::after{
+    content: "";
+    width: 15px;
+    height: 10px;
+    background-color: #1c1d1c;
+    color: #fafaf9;
+    position: absolute;
+    top: -12px;
+    right: 0;
+    transform: translateX(50%);
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+@keyframes fill {
+    from{width: 0;}
+    to{width: 100%;}
+}
